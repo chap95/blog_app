@@ -1,3 +1,9 @@
+import TechStack from "@/components/TechStack";
+
 export default function Home() {
-  return <div></div>;
+  return (
+    <div className="my-[2.5rem]">
+      <TechStack />
+    </div>
+  );
 }
