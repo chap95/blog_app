@@ -1,5 +1,3 @@
-"use client";
-
 import { NextIcon, ReactIcon, ReactQueryIcon, FlutterIcon } from "./svgs/Icon";
 
 const TECH_DATA_MAP_LIST = [
@@ -42,12 +40,6 @@ const TECH_DATA_MAP_LIST = [
 ];
 
 const TechStack = () => {
-  let intersectionObserver;
-
-  if (typeof window !== "undefined") {
-    intersectionObserver = new IntersectionObserver(() => {});
-  }
-
   return (
     <div className="">
       <h2 className="text-[2rem] font-semibold">
@@ -61,7 +53,7 @@ const TechStack = () => {
           return (
             <div
               key={`techStack_${text}`}
-              className="flex gap-x-[0.5rem] items-center"
+              className="flex gap-x-[0.5rem] items-center animate-slideUp"
             >
               {Icon}
               <p className="text-[1.6rem]">{text}</p>
