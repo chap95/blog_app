@@ -1,19 +1,9 @@
-import Image from "next/image";
-
-type ImageProps = typeof Image;
+import Image, { ImageProps } from "next/image";
 
 export interface PostIntroductionProps {
   title: string;
   description?: string;
-  image?: {
-    src: string;
-    alt: string;
-    width?: number | `${number}`;
-    height?: number | `${number}`;
-    priority?: boolean;
-    layout?: string;
-    objectFit?: string;
-  };
+  image?: ImageProps;
 }
 
 const PostIntroduction = ({

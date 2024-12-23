@@ -1,3 +1,5 @@
+import { ImageProps } from "next/image";
+
 enum PostDetailViewType {
   "introduction",
   "mainContent",
@@ -8,10 +10,10 @@ interface PostDetailMapDataType {
   title: string;
   description: string;
   content: string;
-  image?: {};
+  image?: ImageProps;
 }
 
-type PostDetailMapType = Record<number, {}>;
+type PostDetailMapType = Record<number, PostDetailMapDataType>;
 
 const POST_DETAIL_DATA_MAP: PostDetailMapType = {
   1: {
@@ -29,7 +31,7 @@ export default async function PostDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const { title, description } = POST_DETAIL_DATA_MAP[id] ?? {};
+  const { title, description } = POST_DETAIL_DATA_MAP[Number(id)] ?? {};
 
   return (
     <div className="px-[2rem] py-[3rem]">
